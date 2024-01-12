@@ -7,6 +7,7 @@ export default function Form() {
   return (
     <div>
       <p>Bnana</p>
+      <form action=""></form>
     </div>
   );
 }
