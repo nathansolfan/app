@@ -7,7 +7,6 @@ const Button = () => {
   return (
     <div>
       <button onClick={() => setName("Luigi")}>This is a button</button>
-      {name}
     </div>
   );
 };

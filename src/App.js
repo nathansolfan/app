@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
+import Form from "./database/form";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/services" element={<Services />} />
         </Routes>
         <Button />
+        <Form />
       </div>
     </Router>
   );

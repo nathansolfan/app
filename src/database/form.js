@@ -1,5 +1,12 @@
 import React from "react";
+import { useState } from "react";
 
-export default function form() {
-  return <div>form</div>;
+export default function Form() {
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  return (
+    <div>
+      <p>Bnana</p>
+    </div>
+  );
 }
