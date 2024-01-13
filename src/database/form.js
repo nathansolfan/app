@@ -3,12 +3,11 @@ import { useState } from "react";
 
 export default function Form() {
   const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
   return (
     <div>
       <p>Banana</p>
       <form action="">
-        <label>Title: {name}</label>
+        <label>Title:{name}</label>
 
         <br />
 
