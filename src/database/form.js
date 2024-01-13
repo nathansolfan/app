@@ -6,8 +6,20 @@ export default function Form() {
   const [username, setUsername] = useState("");
   return (
     <div>
-      <p>Bnana</p>
-      <form action=""></form>
+      <p>Banana</p>
+      <form action="">
+        <label>Title: {name}</label>
+
+        <br />
+
+        <input
+          type="text"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button>Click</button>
+      </form>
     </div>
   );
 }
