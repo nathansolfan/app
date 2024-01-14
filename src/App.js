@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
-import Form from "./database/form";
+import Form from "./form/form";
 
 function App() {
   return (

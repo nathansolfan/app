@@ -9,3 +9,7 @@ app.post("submit-form-jo", (req, res) => {
   console.log(req.body); // log the data
   res.send("Data Received jo");
 });
+
+app.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
+});
