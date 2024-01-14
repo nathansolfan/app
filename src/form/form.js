@@ -6,7 +6,7 @@ export default function Form() {
   return (
     <div>
       <p>Banana</p>
-      <form action="">
+      <form action="http://localhost:3001/submit-form-nat" method="POST">
         <label>Title:{name}</label>
 
         <br />
