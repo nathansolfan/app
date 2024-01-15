@@ -8,6 +8,12 @@ export default function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const response = await fetch("http://localhost:3001/submit-form-nat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
     } catch {}
   };
 
