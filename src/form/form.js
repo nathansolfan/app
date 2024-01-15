@@ -18,7 +18,9 @@ export default function Form() {
 
       const data = await response.text();
       console.log(data);
-    } catch {}
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   return (
