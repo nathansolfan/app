@@ -5,10 +5,16 @@ export default function Form() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+    } catch {}
+  };
+
   return (
     <div>
       <p>Banana</p>
-      <form action="http://localhost:3001/submit-form-nat" method="POST">
+      <form onClick={handleSubmit}>
         <label>Title:{name}</label>
 
         <br />
