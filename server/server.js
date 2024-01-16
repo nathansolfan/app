@@ -19,6 +19,7 @@ app.post("/submit-form-nat", (req, res) => {
   res.send("Data Received jo");
 });
 
+// R E G I S T E R
 app.post("/register", (req, res) => {
   const { name, password } = req.body;
   const result = registerUser(name, password);
@@ -28,6 +29,10 @@ app.post("/register", (req, res) => {
   } else {
     res.status(400).send(result.message);
   }
+});
+
+app.post("/login", (req, res) => {
+  const { name, password } = req.body;
 });
 
 app.listen(port, () => {
