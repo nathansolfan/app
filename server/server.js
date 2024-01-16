@@ -2,7 +2,7 @@ const express = require("express");
 // C O R S
 const cors = require("cors");
 // U S E R S
-const { registerUser } = require("../src/users/users");
+const { registerUser, loginUser } = require("../src/users/users");
 
 // E X P R E S S
 const app = express();
@@ -33,6 +33,13 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   const { name, password } = req.body;
+  const result = loginUser(name, password);
+
+  if (result.success) {
+    res.send(result.message);
+  } else {
+    res.status(401).send(result.message);
+  }
 });
 
 app.listen(port, () => {
