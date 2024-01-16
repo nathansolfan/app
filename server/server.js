@@ -1,4 +1,6 @@
 const express = require("express");
+// C O R S
+const cors = require("cors");
 const app = express();
 const port = 3001;
 

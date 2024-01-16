@@ -26,7 +26,7 @@ export default function Form() {
   return (
     <div>
       <p>Banana</p>
-      <form onClick={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>Title </label>
         <input
           type="text"
