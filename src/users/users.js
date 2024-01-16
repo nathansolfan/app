@@ -10,10 +10,14 @@ const registerUser = (name, password) => {
 };
 
 const loginUser = (name, password) => {
-    const user = users.find(user => user.name === name && user.password === password)
-    if(){
-        
-    }
+  const user = users.find(
+    (user) => user.name === name && user.password === password
+  );
+  if (user) {
+    return { success: true, message: "Login OK" };
+  } else {
+    return { success: false, message: "Wrong stuff" };
+  }
 };
 
 module.exports = { registerUser, loginUser };
