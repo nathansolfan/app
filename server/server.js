@@ -22,6 +22,12 @@ app.post("/submit-form-nat", (req, res) => {
 app.post("/register", (req, res) => {
   const { name, password } = req.body;
   const result = registerUser(name, password);
+
+  if (result.success) {
+    res.send(result.message);
+  } else {
+    res.status(400).send(result.message);
+  }
 });
 
 app.listen(port, () => {
