@@ -7,6 +7,7 @@ import Home from "./Home";
 import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Form from "./form/form";
+import Login from "./Login";
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
           {/* Specify the Home component */}
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Button />
         <Form />
+        <p>Haha</p>
       </div>
     </Router>
   );
