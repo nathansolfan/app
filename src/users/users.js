@@ -1,5 +1,5 @@
 let users = [];
-
+// R E G I S T E R
 const registerUser = (name, password) => {
   if (users.some((user) => user.name === name)) {
     return { success: false, message: "Username already taken" };
@@ -8,7 +8,7 @@ const registerUser = (name, password) => {
   users.push({ name, password });
   return { success: true, message: "User registrou correctly" };
 };
-
+//  L O G I N
 const loginUser = (name, password) => {
   const user = users.find(
     (user) => user.name === name && user.password === password
