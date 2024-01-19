@@ -22,6 +22,9 @@ app.post("/submit-form-nat", (req, res) => {
 // R E G I S T E R
 app.post("/register", (req, res) => {
   const { name, password } = req.body;
+
+  // L O G the D A T A
+  console.log(req.body);
   const result = registerUser(name, password);
 
   if (result.success) {
