@@ -8,6 +8,7 @@ import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Form from "./form/form";
 import Login from "./Login";
+import Register from "./Register";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Button />
         <Form />
