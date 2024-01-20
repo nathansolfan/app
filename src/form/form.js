@@ -7,6 +7,7 @@ export default function Form({ onSubmit, buttonLabel }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    onSubmit(name, password);
   };
 
   return (
