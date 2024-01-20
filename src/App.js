@@ -26,8 +26,6 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
         <Button />
-        <Form />
-        <p>Haha</p>
       </div>
     </Router>
   );

@@ -20,8 +20,8 @@ export default function Register() {
   };
   return (
     <div>
-      <div>Register</div>
-      <button>Hello</button>
+      <h2>Register</h2>
+      <Form onSubmit={handleRegister} buttonLabel={"Registere"} />
     </div>
   );
 }
