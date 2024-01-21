@@ -7,6 +7,7 @@ import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
+import UserDetail from "./UserDetail";
 
 function App() {
   const [auth, setAuth] = useState();
@@ -17,7 +18,7 @@ function App() {
       <div className="App">
         <div>
           <Login setAuth={setAuth} />
-          {auth.isLoggedIn && }
+          {auth.isLoggedIn && <UserDetail user={auth.user} />}
         </div>
         <Navbar />
         <Routes>
