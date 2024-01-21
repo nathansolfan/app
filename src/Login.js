@@ -11,13 +11,16 @@ export default function Login() {
         },
         body: JSON.stringify({ name, password }),
       });
+
+      const data = await response.text();
+      console.log(data);
     } catch (error) {
       console.log("Error man", error);
     }
   };
   return (
     <div>
-      <Form onSubmit={handleLogIn} buttonLabel={"Login"} />
+      <Form onSubmit={handleLogin} buttonLabel={"Login"} />
     </div>
   );
 }
