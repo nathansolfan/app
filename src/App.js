@@ -10,7 +10,7 @@ import Register from "./Register";
 import UserDetail from "./UserDetail";
 
 function App() {
-  const [auth, setAuth] = useState();
+  const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
   return (
     <Router>
       {" "}
