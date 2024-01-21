@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import BrowserRouter and other necessary components
 import "./App.css";
 import Navbar from "./Navbar";
@@ -9,11 +9,16 @@ import Login from "./Login";
 import Register from "./Register";
 
 function App() {
+  const [auth, setAuth] = useState();
   return (
     <Router>
       {" "}
       {/* Wrap your entire app with BrowserRouter */}
       <div className="App">
+        <div>
+          <Login setAuth={setAuth} />
+          {auth.isLoggedIn && }
+        </div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />{" "}
