@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./form/form";
 
 export default function Login({ handleLogin }) {
-  const handleLogin = async (name, password) => {
+  const FormSubmit = async (name, password) => {
     try {
       const response = await fetch("http://localhost:3001/login", {
         method: "POST",
@@ -12,7 +12,7 @@ export default function Login({ handleLogin }) {
         body: JSON.stringify({ name, password }),
       });
 
-      const data = await response.text();
+      const data = await response.json();
       console.log(data);
     } catch (error) {
       console.log("Error man", error);
@@ -21,7 +21,7 @@ export default function Login({ handleLogin }) {
   return (
     <div>
       <h2>Log in</h2>
-      <Form onSubmit={handleLogin} buttonLabel={"Login"} />
+      <Form onSubmit={FormSubmit} buttonLabel={"Login"} />
     </div>
   );
 }
