@@ -11,22 +11,22 @@ import UserDetail from "./UserDetail";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
+  const handleLogin = (user) => {
+    setAuth({ isLoggedIn: true, user: user });
+  };
+
   return (
     <Router>
       {" "}
       {/* Wrap your entire app with BrowserRouter */}
       <div className="App">
-        <div>
-          <Login setAuth={setAuth} />
-          {auth.isLoggedIn && <UserDetail user={auth.user} />}
-        </div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />{" "}
           {/* Specify the Home component */}
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>

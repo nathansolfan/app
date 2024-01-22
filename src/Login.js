@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./form/form";
 
-export default function Login() {
+export default function Login({ handleLogin }) {
   const handleLogin = async (name, password) => {
     try {
       const response = await fetch("http://localhost:3001/login", {
