@@ -12,8 +12,11 @@ export default function Login({ handleLogin }) {
         body: JSON.stringify({ name, password }),
       });
 
-      const data = await response.json();
-      console.log(data);
+      if (response.ok) {
+        const textResponse = await response.json();
+        console.log(textResponse);
+        handleLogin({ name });
+      }
     } catch (error) {
       console.log("Error man", error);
     }

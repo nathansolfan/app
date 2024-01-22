@@ -39,7 +39,7 @@ app.post("/login", (req, res) => {
   const result = loginUser(name, password);
 
   if (result.success) {
-    res.send(result.message);
+    res.json({ user: { name: name } });
   } else {
     res.status(401).send(result.message);
   }

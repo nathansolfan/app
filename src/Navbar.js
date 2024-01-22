@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import logo from "./pictures/logo.png";
 import portrait from "./pictures/portrait.png";
 
-function Navbar() {
+function Navbar({ isLoggedIn, user }) {
   return (
     <div className="navbar">
       {/* <div className="logo"><img src={logo} alt="Logo" /></div> */}
+      {isLoggedIn && <div>Welcome, {user.name}</div>}
       <div className="nav-links">
         <ul>
           <li>
