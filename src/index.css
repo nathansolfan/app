@@ -27,3 +27,29 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+.mt-1 {margin-top: 1rem;}
+.mb-1 {margin-bottom: 1rem;}
+.mt-2 {margin-top: 2rem;}
+.mb-2 {margin-bottom: 2rem;}
+
+
+/* B A S E  S T Y L E S */
+h1, h2, h3, h4, h5, h6{
+  color: #333
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* R E S P O N S I V E  D E S I G N */
+@media only screen and (max-width: 600px){
+  .navbar {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
