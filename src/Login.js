@@ -3,6 +3,8 @@ import Form from "./form/form";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ handleLogin }) {
+  const navigate = useNavigate();
+
   const FormSubmit = async (name, password) => {
     try {
       const response = await fetch("http://localhost:3001/login", {
@@ -17,11 +19,13 @@ export default function Login({ handleLogin }) {
         const textResponse = await response.json();
         console.log(textResponse);
         handleLogin({ name });
+        navigate("/");
       }
     } catch (error) {
       console.log("Error man", error);
     }
   };
+
   return (
     <div>
       <h2>Log in</h2>
