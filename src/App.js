@@ -20,22 +20,25 @@ function App() {
 
   return (
     <Router>
-      {" "}
-      {/* Wrap your entire app with BrowserRouter */}
       <div className="App">
         <Navbar
           isLoggedIn={auth.isLoggedIn}
           user={auth.user}
           handleLogout={handleLogout}
         />
-        <Routes>
-          <Route path="/" element={<Home />} />{" "}
-          {/* Specify the Home component */}
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />{" "}
+            {/* Specify the Home component */}
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route
+              path="/login"
+              element={<Login handleLogin={handleLogin} />}
+            />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
