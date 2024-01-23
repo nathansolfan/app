@@ -1,7 +1,9 @@
 import React from "react";
 import Form from "./form/form";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const navigate = useNavigate();
   const handleRegister = async (name, password) => {
     try {
       const response = await fetch("http://localhost:3001/register", {
@@ -14,6 +16,7 @@ export default function Register() {
 
       const data = await response.text();
       console.log(data);
+      navigate("/login");
     } catch (error) {
       console.log("Error", error);
     }
