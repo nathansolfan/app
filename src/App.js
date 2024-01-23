@@ -23,7 +23,11 @@ function App() {
       {" "}
       {/* Wrap your entire app with BrowserRouter */}
       <div className="App">
-        <Navbar isLoggedIn={auth.isLoggedIn} user={auth.user} />
+        <Navbar
+          isLoggedIn={auth.isLoggedIn}
+          user={auth.user}
+          handleLogout={handleLogout}
+        />
         <Routes>
           <Route path="/" element={<Home />} />{" "}
           {/* Specify the Home component */}
