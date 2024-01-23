@@ -13,3 +13,11 @@ body{
 .text-center{
   text-align: center;
 }
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
