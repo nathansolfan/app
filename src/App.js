@@ -7,12 +7,15 @@ import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
-import UserDetail from "./UserDetail";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
   const handleLogin = (user) => {
     setAuth({ isLoggedIn: true, user: user });
+  };
+
+  const handleLogout = () => {
+    setAuth({ isLoggedIn: false, user: null });
   };
 
   return (
