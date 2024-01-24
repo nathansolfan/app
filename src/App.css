@@ -42,8 +42,18 @@
   color: black;
 }
 
-.btn-logout
+.btn-logout {
 
+}
+
+.nav-links {
+  list-style-type: none;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
 /* G E N E R A L  L A Y O U T */
 .container {
   padding: 20px;
