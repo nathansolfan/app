@@ -1,43 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./pictures/logo.png";
-import portrait from "./pictures/portrait.png";
 
-function Navbar({ isLoggedIn, user, handleLogout }) {
+export default function Navbar({ isLoggedIn, user, handleLogout }) {
   return (
-    <div className="navbar">
-      {/* <div className="logo"><img src={logo} alt="Logo" /></div> */}
+    <nav className="navbar">
       {isLoggedIn && (
-        <div>
-          <div>Welcome, {user.name}</div>
-          <button onClick={handleLogout}>Logout</button>
+        <div className="navbar-user-info">
+          <span>Welcome, {user.name}</span>
+          <button className="btn-logout" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       )}
-      <div className="nav-links">
-        <ul>
-          <li>
-            <Link to="/">Homere </Link>
-          </li>
-          <li>
-            <Link to="/about">About me </Link>
-          </li>
-          <li>
-            <Link to="/services">Services </Link>
-          </li>
-          <li>
-            <Link to="/register">Register </Link>
-          </li>
-          <li>
-            <Link to="/login">Log in </Link>
-          </li>
-        </ul>
-      </div>
 
-      {/* <div className="portrait">
-        <img src={portrait} alt="Portrait" />
-      </div> */}
-    </div>
+      <ul className="nav-links">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        {!isLoggedIn && (
+          <>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </>
+        )}
+      </ul>
+    </nav>
   );
 }
-
-export default Navbar;

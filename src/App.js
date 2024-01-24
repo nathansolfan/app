@@ -27,17 +27,19 @@ function App() {
           handleLogout={handleLogout}
         />
         <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />{" "}
-            {/* Specify the Home component */}
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route
-              path="/login"
-              element={<Login handleLogin={handleLogin} />}
-            />
-            <Route path="/register" element={<Register />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />{" "}
+              {/* Specify the Home component */}
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route
+                path="/login"
+                element={<Login handleLogin={handleLogin} />}
+              />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>
