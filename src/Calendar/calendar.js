@@ -10,6 +10,7 @@ const generateTime = (date) => {
   const slots = morningSlots.concat(eveningSlots);
   return { [formattedDate]: slots };
 };
+
 export default function MyCalendar() {
   // create state for Date - which is the  value of Calendar
   const [selectDate, setSelectDate] = useState(new Date());
@@ -19,11 +20,23 @@ export default function MyCalendar() {
     console.log(date);
   };
 
+  const selectedDate = generateTime(selectDate);
+
   return (
     <div>
       <h2>My Calendar</h2>
       {/* when user select a date on the calendar, onChange func is called  */}
       <Calendar onChange={onChange} value={selectDate} />
+      <div>
+        <h3>Available Times:</h3>
+        <ul>
+          {selectedDate[selectDate.toISOString().split("T")[0]].map(
+            (time, index) => (
+              <li key={index}>{time}</li>
+            )
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
