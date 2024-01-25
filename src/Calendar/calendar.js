@@ -1,6 +1,11 @@
 import React from "react";
-import calendar from "react-calendar";
+import Calendar from "react-calendar";
 
 export default function Calendar() {
-  return <div>Calendar</div>;
+  return (
+    <div>
+      <h2>My Calendar</h2>
+      <Calendar />
+    </div>
+  );
 }
