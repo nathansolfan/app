@@ -23,6 +23,9 @@ export default function Navbar({ isLoggedIn, user, handleLogout }) {
         <li>
           <Link to="/services">Services</Link>
         </li>
+        <li>
+          <Link to="/calendar">Calendar</Link>
+        </li>
         {!isLoggedIn && (
           <>
             <li>

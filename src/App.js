@@ -7,6 +7,7 @@ import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
+import MyCalendar from "./Calendar/calendar";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
@@ -38,6 +39,7 @@ function App() {
                 element={<Login handleLogin={handleLogin} />}
               />
               <Route path="/register" element={<Register />} />
+              <Route path="/calendar" element={<MyCalendar />} />
             </Routes>
           </div>
         </div>
