@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
+import "./mycalendar.css";
 
 const generateTime = (date) => {
   const formattedDate = date.toISOString().split("T")[0];
