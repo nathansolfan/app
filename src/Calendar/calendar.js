@@ -23,7 +23,7 @@ export default function MyCalendar() {
   const selectedDate = generateTime(selectDate);
 
   return (
-    <div>
+    <div className="my-calendar">
       <h2>My Calendar</h2>
       {/* when user select a date on the calendar, onChange func is called  */}
       <Calendar onChange={onChange} value={selectDate} />
