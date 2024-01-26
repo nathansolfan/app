@@ -26,7 +26,9 @@ export default function MyCalendar() {
     <div className="my-calendar">
       <h2>My Calendar</h2>
       {/* when user select a date on the calendar, onChange func is called  */}
-      <Calendar onChange={onChange} value={selectDate} />
+      <div className="calendar-container">
+        <Calendar onChange={onChange} value={selectDate} />
+      </div>
       <div>
         <h3>Available Times:</h3>
         <ul>
