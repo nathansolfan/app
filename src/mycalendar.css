@@ -1,0 +1,26 @@
+/* MyCalendar.css */
+.my-calendar {
+    /* Styles for the calendar component */
+  }
+  
+  .calendar-title {
+    /* Styles for the calendar title */
+  }
+  
+  .calendar-container {
+    /* Styles for the calendar container */
+  }
+  
+  .available-times {
+    /* Styles for the available times section */
+  }
+  
+  .time-slots {
+    /* Styles for the list of time slots */
+  }
+  
+  .time-slot {
+    /* Styles for individual time slots */
+    cursor: pointer; /* Example: Makes the time slots appear clickable */
+  }
+  
