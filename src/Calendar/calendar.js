@@ -15,9 +15,10 @@ export default function MyCalendar() {
   // create state for Date - which is the  value of Calendar
   const [selectDate, setSelectDate] = useState(new Date());
   // keep track of time slot
-  const [selectedTimes, setSelectedTime] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const bookTimeSlot = (time) => {
+    setSelectedTime(time);
     alert(`You selected ${time} on ${selectDate.toDateString()}`);
   };
 
