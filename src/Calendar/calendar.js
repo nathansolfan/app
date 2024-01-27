@@ -40,7 +40,13 @@ export default function MyCalendar() {
         <ul className="time-slots">
           {selectedDate[selectDate.toISOString().split("T")[0]].map(
             (time, index) => (
-              <li key={index} onClick={() => bookTimeSlot(time)}>
+              <li
+                key={index}
+                onClick={() => bookTimeSlot(time)}
+                className={`time-slot ${
+                  selectedTime === time ? "selected" : ""
+                }`}
+              >
                 {time}
               </li>
             )
