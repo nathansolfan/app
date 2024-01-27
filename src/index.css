@@ -52,7 +52,13 @@ p {
 }
 
 /* R E S P O N S I V E  D E S I G N */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
+
+  .my-calendar{
+    padding: 15px;
+
+  }
+
   .navbar {
     flex-direction: column;
   }
@@ -60,12 +66,17 @@ p {
   .container {
     padding: 10px;
   }
+
+  .time-slot {
+    font-size: 14px;
+  }
 }
 
 /* MY CALENDAR */
 
 .my-calendar {
-  max-width: 600px;
+  max-width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
