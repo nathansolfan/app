@@ -16,7 +16,7 @@ export default function MyCalendar() {
   const [selectDate, setSelectDate] = useState(new Date());
 
   const bookTimeSlot = (time) => {
-    alert("You selected ${time} on ${selectDate.toDateString()}");
+    alert(`You selected ${time} on ${selectDate.toDateString()}`);
   };
 
   const onChange = (date) => {
