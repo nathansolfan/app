@@ -17,6 +17,9 @@ export default function MyCalendar() {
   // keep track of time slot
   const [selectedTime, setSelectedTime] = useState(null);
 
+  // state for confirmation - starts false
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
   const bookTimeSlot = (time) => {
     setSelectedTime(time);
     alert(`You selected ${time} on ${selectDate.toDateString()}`);
