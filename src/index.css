@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -5,6 +12,7 @@
 }
 
 body{
+  background-color: #f0f2f5;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -84,4 +92,9 @@ p {
 
 .time-slot:hover {
   background-color: #151313;
+}
+
+.time-slot.selected {
+  background-color: #4caf50;
+  color: white;
 }
