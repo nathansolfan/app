@@ -82,7 +82,6 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.time-slot {
-  /* Styles for individual time slots */
-  cursor: pointer; /* Example: Makes the time slots appear clickable */
+.time-slot:hover {
+  background-color: #151313;
 }

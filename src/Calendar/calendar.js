@@ -15,11 +15,14 @@ export default function MyCalendar() {
   // create state for Date - which is the  value of Calendar
   const [selectDate, setSelectDate] = useState(new Date());
 
+  const bookTimeSlot = (time) => {
+    alert("You selected ${time} on ${selectDate.toDateString()}");
+  };
+
   const onChange = (date) => {
     setSelectDate(date);
     console.log(date);
   };
-
   const selectedDate = generateTime(selectDate);
 
   return (
