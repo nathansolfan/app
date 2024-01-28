@@ -16,6 +16,12 @@ return (
     <li>Skkils 2</li>
     <li>Skills 3</li>
   </ul>
+  
+  <h2 className="experience-header">Experience</h2>
+  <div className="experience-section">
+    My experience with programming
+  </div>
+
 
 </div>
 )
