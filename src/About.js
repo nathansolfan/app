@@ -10,6 +10,13 @@ return (
     Hello, I`m Nathan. I`ve been studying coding for a long time.
   </p>
 
+  <h2 className="skills-header">Skills:</h2>
+  <ul className="skills-list">  
+    <li>Skills 1</li>
+    <li>Skkils 2</li>
+    <li>Skills 3</li>
+  </ul>
+
 </div>
 )
 };
