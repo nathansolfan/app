@@ -35,6 +35,7 @@ export default function MyCalendar() {
   const confirmBooking = () => {
     alert(`You selected ${selectedDate} on ${selectDate.toDateString()}`);
     setConfirmation(false);
+    setSelectedTime(null);
   };
 
   return (
@@ -63,14 +64,17 @@ export default function MyCalendar() {
         </ul>
       </div>
       {showConfirmation && (
-        <div className="confirmation-modal">
-          <p>
-            Confirm your booking for {selectedTime} on{" "}
-            {selectDate.toDateString()} ?
-          </p>
-          <button onClick={confirmBooking}>Confirm</button>
-          <button onClick={() => setConfirmation(false)}>Cancel</button>
-        </div>
+        <>
+          <div className="confirmation-overlay"></div>
+          <div className="confirmation-modal">
+            <p>
+              Confirm your booking for {selectedTime} on{" "}
+              {selectDate.toDateString()} ?
+            </p>
+            <button onClick={confirmBooking}>Confirm</button>
+            <button onClick={() => setConfirmation(false)}>Cancel</button>
+          </div>
+        </>
       )}
     </div>
   );
