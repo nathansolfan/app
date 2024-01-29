@@ -16,12 +16,16 @@ return (
     <li>Skkils 2</li>
     <li>Skills 3</li>
   </ul>
-  
+
   <h2 className="experience-header">Experience</h2>
   <div className="experience-section">
     My experience with programming
   </div>
-
+  <h2 className="contact-header">Contact me</h2>
+  <p className="contact-info">
+  Email: nathansolfan@hotmail.com
+  Email: nathansolfan@gmail.com
+  </p>
 
 </div>
 )
