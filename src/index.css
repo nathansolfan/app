@@ -112,3 +112,9 @@ p {
   background-color: #4caf50;
   color: white;
 }
+
+.about-container {
+  background-color: #38a169;
+  box-shadow: 0 2px 4px rgb(0,0,0,0.1);
+}
+
