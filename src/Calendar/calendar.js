@@ -18,11 +18,11 @@ export default function MyCalendar() {
   const [selectedTime, setSelectedTime] = useState(null);
 
   // state for confirmation - starts false
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showConfirmation, setConfirmation] = useState(false);
 
   const bookTimeSlot = (time) => {
     setSelectedTime(time);
-    alert(`You selected ${time} on ${selectDate.toDateString()}`);
+    setConfirmation(true);
   };
 
   const onChange = (date) => {
@@ -30,6 +30,10 @@ export default function MyCalendar() {
     console.log(date);
   };
   const selectedDate = generateTime(selectDate);
+
+  const confirmBooking = () => {
+    alert(`You selected ${selectedDate} on ${selectDate.toDateString()}`);
+  };
 
   return (
     <div className="my-calendar">
@@ -56,6 +60,16 @@ export default function MyCalendar() {
           )}
         </ul>
       </div>
+      {showConfirmation && (
+        <div className="confirmation-modal">
+          <p>
+            Confirm your booking for {selectedDate} on{" "}
+            {selectDate.toDateString()} ?
+          </p>
+          <button onClick={confirmBooking}>Confirm</button>
+          <button onClick={() => setConfirmation(false)}>Cancel</button>
+        </div>
+      )}
     </div>
   );
 }
