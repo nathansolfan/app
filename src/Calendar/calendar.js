@@ -30,10 +30,10 @@ export default function MyCalendar() {
     setSelectDate(date);
     console.log(date);
   };
-  const selectedDate = generateTime(selectDate);
+  const chosenTime = generateTime(selectDate);
 
   const confirmBooking = () => {
-    alert(`You selected ${selectedDate} on ${selectDate.toDateString()}`);
+    alert(`You selected ${selectedTime} on ${selectDate.toDateString()}`);
     setShowConfirmation(false);
     setSelectedTime(null);
   };
@@ -48,7 +48,7 @@ export default function MyCalendar() {
       <div>
         <h3>Available Times:</h3>
         <ul className="time-slots">
-          {selectedDate[selectDate.toISOString().split("T")[0]].map(
+          {chosenTime[selectDate.toISOString().split("T")[0]].map(
             (time, index) => (
               <li
                 key={index}
