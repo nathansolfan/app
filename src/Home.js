@@ -18,7 +18,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <h3>Aiport Transfers</h3>
+          <h3>Airport Transfers</h3>
           <p>
             Ensure a smooth ride to and from the airport for those times where
             bus and trains are not available.

@@ -83,6 +83,8 @@ p {
   margin-bottom: 20px;
 }
 
+/* T I M E   S L O T S */
+
 .time-slots {
   margin: 20px 0;
   margin-bottom: 10px;
@@ -109,6 +111,8 @@ p {
   box-shadow: 0 2px 4px rgb(0,0,0,0.1);
 }
 
+/* C O N F I R M A T I O N  */
+
 .confirmation-modal {
   position: fixed;
   top: 65%;
@@ -133,4 +137,11 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
   z-index: 999; /* Ensure it's below the modal but above other content */
+}
+
+/* H O M E */
+.home-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
