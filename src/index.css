@@ -145,3 +145,14 @@ p {
   margin: auto;
   padding: 20px;
 }
+
+.home-header, .services, .about, .contact {
+  margin-bottom: 40px;
+}
+
+.service-item {
+  margin-bottom: 20px;
+  background-color: #2a2c2e;
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -10,14 +10,14 @@ export default function Home() {
 
       <section className="services">
         <h2>Our services:</h2>
-        <div>
+        <div className="service-item">
           <h3>Work Commute</h3>
           <p>
             Start your workday stress-free with a timely and comfortable ride to
             work
           </p>
         </div>
-        <div>
+        <div className="service-item">
           <h3>Airport Transfers</h3>
           <p>
             Ensure a smooth ride to and from the airport for those times where
