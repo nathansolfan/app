@@ -79,32 +79,53 @@ p {
   box-shadow: 0 2px 5px rgb(0,0,0,0.1);
 }
 
+.calendar-container {
+  margin-bottom: 20px;
+}
+
+
 .calendar-container .react-calendar {
   border: 1px solid #ddd;
   max-width: 90%;
   margin: auto;
   border-radius: 8px;
 }
+/* CALENDAR HEADER */
+.calendar-container.react-calendar__navigation {
+  background-color: #4caf50;
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
-.calendar-container {
-  margin-bottom: 20px;
+.calendar-container.react-calendar__month-view__days__day {
+  border-radius: 50%;
+  margin: 2px;
 }
 
 /* T I M E   S L O T S */
-
 .time-slots {
-  margin: 20px 0;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
   padding: 10px;
-  background-color: #e7e7e7;
+  list-style: none;
+}
+
+
+.time-slot {
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #333;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  text-align: center;
+  cursor: ;
 }
 
 .time-slot:hover {
   box-shadow: 0 4px 6px rgba(44, 18, 18, 0.1);
 }
+
 
 .time-slot.selected {
   border: 2px solid #38a169;
