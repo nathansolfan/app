@@ -119,19 +119,22 @@ p {
   color: #333;
   border-radius: 5px;
   text-align: center;
-  cursor: ;
+  cursor: pointer;
+  transition: background-color 0.3sec ease-in-out, transform 0.2sec ease-in-out;
 }
 
+
+
 .time-slot:hover {
-  box-shadow: 0 4px 6px rgba(44, 18, 18, 0.1);
+  background-color:#e0e0e0;
+  transform: translateY(-2px);
 }
 
 
 .time-slot.selected {
-  border: 2px solid #38a169;
-  box-shadow: 0 2px 4px rgb(0,0,0,0.1);
   background-color: #4caf50;
   color: white;
+  font-weight: bold;
 }
 
 .about-container {
