@@ -44,7 +44,10 @@ app.post("/login", (req, res) => {
     res.status(401).send(result.message);
   }
 });
+// BOOKING backend
+app.post("/book", (req, res) => {});
 
+// SERVER LISTENING
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
 });
