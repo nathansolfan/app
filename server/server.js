@@ -7,7 +7,6 @@ const { registerUser, loginUser } = require("../src/users/users");
 // E X P R E S S
 const app = express();
 const port = 3001;
-
 // C O R S
 app.use(cors());
 
@@ -45,7 +44,12 @@ app.post("/login", (req, res) => {
   }
 });
 // BOOKING backend
-app.post("/book", (req, res) => {});
+let bookings = [];
+app.post("/book", (req, res) => {
+  const booking = req.body;
+  // stored in an array - booking
+  bookings.push(booking);
+});
 
 // SERVER LISTENING
 app.listen(port, () => {
