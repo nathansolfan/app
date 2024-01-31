@@ -49,6 +49,8 @@ app.post("/book", (req, res) => {
   const booking = req.body;
   // stored in an array - booking
   bookings.push(booking);
+  console.log("new Booking received", booking);
+  res.json({ status: "success", message: "Booking confirmed", booking });
 });
 
 // SERVER LISTENING
