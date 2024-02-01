@@ -21,7 +21,7 @@ export default function MyCalendar() {
   // state for confirmation - starts false
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  // once booked
+  // BOOK TIME
   const bookTimeSlot = (time) => {
     setSelectedTime(time);
     setShowConfirmation(true);
@@ -33,14 +33,33 @@ export default function MyCalendar() {
   };
   const chosenTime = generateTime(selectDate);
 
+  // TO CANCEL
   const onCancel = () => {
     setShowConfirmation(false);
   };
 
+  // TO CONFIRM
   const confirmBooking = () => {
-    alert(`You selected ${selectedTime} on ${selectDate.toDateString()}`);
-    setShowConfirmation(false);
-    setSelectedTime(null);
+    const bookingDetails = {
+      date: selectDate.toISOString().split("T")[0],
+      time: selectedTime,
+    };
+    fetch("http://localhost:3001/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingDetails),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Booking confirmed:", data);
+        setShowConfirmation(false);
+        setSelectedTime(null);
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
   };
 
   return (

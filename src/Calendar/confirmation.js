@@ -10,21 +10,17 @@ const Confirmation = ({
   if (!isVisible) return null;
 
   return (
-    <div>
-      {Confirmation && (
-        <>
-          <div className="confirmation-overlay"></div>
-          <div className="confirmation-modal">
-            <p>
-              Confirm your booking for {selectedTime} on{" "}
-              {selectDate.toDateString()} ?
-            </p>
-            <button onClick={onConfirm}>Confirm</button>
-            <button onClick={onCancel}>Cancel</button>
-          </div>
-        </>
-      )}
-    </div>
+    <>
+      <div className="confirmation-overlay"></div>
+      <div className="confirmation-modal">
+        <p>
+          Confirm your booking for {selectedTime} on {selectDate.toDateString()}{" "}
+          ?
+        </p>
+        <button onClick={onConfirm}>Confirm</button>
+        <button onClick={onCancel}>Cancel</button>
+      </div>
+    </>
   );
 };
 
