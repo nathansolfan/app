@@ -33,6 +33,10 @@ export default function MyCalendar() {
   };
   const chosenTime = generateTime(selectDate);
 
+  const onCancel = () => {
+    setShowConfirmation(false);
+  };
+
   const confirmBooking = () => {
     alert(`You selected ${selectedTime} on ${selectDate.toDateString()}`);
     setShowConfirmation(false);
@@ -68,6 +72,9 @@ export default function MyCalendar() {
         <Confirmation
           isVisible={showConfirmation}
           selectedTime={selectedTime}
+          selectDate={selectDate}
+          onConfirm={confirmBooking}
+          onCancel={onCancel}
         />
       </div>
     </div>

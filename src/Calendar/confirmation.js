@@ -1,6 +1,14 @@
 import React from "react";
 
-export default function Confirmation() {
+const Confirmation = ({
+  isVisible,
+  selectDate,
+  selectedTime,
+  onConfirm,
+  onCancel,
+}) => {
+  if (!isVisible) return null;
+
   return (
     <div>
       {Confirmation && (
@@ -11,11 +19,13 @@ export default function Confirmation() {
               Confirm your booking for {selectedTime} on{" "}
               {selectDate.toDateString()} ?
             </p>
-            <button onClick={confirmBooking}>Confirm</button>
-            <button onClick={() => setShowConfirmation(false)}>Cancel</button>
+            <button onClick={onConfirm}>Confirm</button>
+            <button onClick={onCancel}>Cancel</button>
           </div>
         </>
       )}
     </div>
   );
-}
+};
+
+export default Confirmation;
