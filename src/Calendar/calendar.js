@@ -65,7 +65,10 @@ export default function MyCalendar() {
         </ul>
       </div>
       <div>
-        <Confirmation />
+        <Confirmation
+          isVisible={showConfirmation}
+          selectedTime={selectedTime}
+        />
       </div>
     </div>
   );
