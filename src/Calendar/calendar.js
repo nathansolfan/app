@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
+import Confirmation from "./confirmation";
 
 const generateTime = (date) => {
   const formattedDate = date.toISOString().split("T")[0];
@@ -63,19 +64,9 @@ export default function MyCalendar() {
           )}
         </ul>
       </div>
-      {showConfirmation && (
-        <>
-          <div className="confirmation-overlay"></div>
-          <div className="confirmation-modal">
-            <p>
-              Confirm your booking for {selectedTime} on{" "}
-              {selectDate.toDateString()} ?
-            </p>
-            <button onClick={confirmBooking}>Confirm</button>
-            <button onClick={() => setShowConfirmation(false)}>Cancel</button>
-          </div>
-        </>
-      )}
+      <div>
+        <Confirmation />
+      </div>
     </div>
   );
 }
