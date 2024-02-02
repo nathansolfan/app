@@ -19,6 +19,10 @@ const path = require("path");
 
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 
+const readBookingsFromFile = () => {
+  return new Promise((resolve, reject) => {});
+};
+
 app.post("/submit-form-nat", (req, res) => {
   console.log(req.body); // log the data
   res.send("Data Received jo");
