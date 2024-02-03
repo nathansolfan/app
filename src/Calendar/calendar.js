@@ -4,8 +4,8 @@ import Confirmation from "./confirmation";
 
 const generateTime = (date) => {
   const formattedDate = date.toISOString().split("T")[0];
-  const morningSlots = ["05:00", "06:00"];
-  const eveningSlots = ["17:00", "18:00"];
+  const morningSlots = ["Morning: 6AM - 6PM"];
+  const eveningSlots = ["Evening: 6PM - 6AM"];
 
   // combine morning and evening
   const slots = morningSlots.concat(eveningSlots);
@@ -31,6 +31,14 @@ export default function MyCalendar() {
     setSelectDate(date);
     console.log(date);
   };
+
+  const formattedDate = selectDate.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   const chosenTime = generateTime(selectDate);
 
   // TO CANCEL
@@ -65,6 +73,8 @@ export default function MyCalendar() {
   return (
     <div className="my-calendar">
       <h2>My Calendar</h2>
+      <p>Selected Date: {formattedDate}</p>
+      <p>Selected Time: {selectedTime || "None"}</p>
       {/* when user select a date on the calendar, onChange func is called  */}
       <div className="calendar-container">
         <Calendar onChange={onChange} value={selectDate} />
