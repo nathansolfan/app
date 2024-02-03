@@ -4,6 +4,10 @@ const cors = require("cors");
 // U S E R S
 const { registerUser, loginUser } = require("../src/users/users");
 
+// FS and Path
+const fs = require("fs");
+const path = require("path");
+
 // E X P R E S S
 const app = express();
 const port = 3001;
@@ -13,11 +17,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// FS and Path
-const fs = require("fs");
-const path = require("path");
-
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
+
+console.log("Bookings file path:", BOOKINGS_FILE);
 
 const readBookingsFromFile = () => {
   return new Promise((resolve, reject) => {
@@ -31,9 +33,10 @@ const readBookingsFromFile = () => {
   });
 };
 // Promise( () => {} )
-const saveBookingsToFile = (booking) => {
+const saveBookingsToFile = (bookings) => {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify(bookings, null, 2);
+    console.log("Saving bookings to file:", data);
     fs.writeFile(BOOKINGS_FILE, data, (error) => {
       if (error) {
         reject(error);
@@ -78,8 +81,8 @@ app.post("/login", (req, res) => {
 app.post("/book", async (req, res) => {
   try {
     const newBooking = req.body;
+    console.log("Received booking dataaa:", newBooking);
     const bookings = await readBookingsFromFile();
-
     bookings.push(newBooking);
     await saveBookingsToFile(bookings);
     console.log("New booking received", newBooking);
@@ -88,18 +91,21 @@ app.post("/book", async (req, res) => {
       message: "Booking confirmedd",
       booking: newBooking,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log("Failed to proceed", error);
+    res.status(500).send("Failed to process booking");
+  }
 });
 
-// BOOKING backend
-let bookings = [];
-app.post("/book", (req, res) => {
-  const booking = req.body;
-  // stored in an array - booking
-  bookings.push(booking);
-  console.log("new Booking received", booking);
-  res.json({ status: "success", message: "Booking confirmed", booking });
-});
+// // BOOKING backend
+// let bookings = [];
+// app.post("/book", (req, res) => {
+//   const booking = req.body;
+//   // stored in an array - booking
+//   bookings.push(booking);
+//   console.log("new Booking received", booking);
+//   res.json({ status: "success", message: "Booking confirmed", booking });
+// });
 
 // SERVER LISTENING
 app.listen(port, () => {
