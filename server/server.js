@@ -30,8 +30,12 @@ const readBookingsFromFile = () => {
     });
   });
 };
-
-const saveBookingsToFile = (booking) => {};
+// Promise( () => {} )
+const saveBookingsToFile = (booking) => {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(bookings, null, 2);
+  });
+};
 
 app.post("/submit-form-nat", (req, res) => {
   console.log(req.body); // log the data
