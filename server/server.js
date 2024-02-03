@@ -74,6 +74,12 @@ app.post("/login", (req, res) => {
     res.status(401).send(result.message);
   }
 });
+
+app.post("/book", async (req, res) => {
+  try {
+  } catch (error) {}
+});
+
 // BOOKING backend
 let bookings = [];
 app.post("/book", (req, res) => {
