@@ -79,7 +79,15 @@ app.post("/book", async (req, res) => {
   try {
     const newBooking = req.body;
     const bookings = await readBookingsFromFile();
+
     bookings.push(newBooking);
+    await saveBookingsToFile(bookings);
+    console.log("New booking received", newBooking);
+    res.json({
+      status: "success",
+      message: "Booking confirmedd",
+      booking: newBooking,
+    });
   } catch (error) {}
 });
 
