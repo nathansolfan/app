@@ -31,6 +31,8 @@ const readBookingsFromFile = () => {
   });
 };
 
+const saveBookingsToFile = (booking) => {};
+
 app.post("/submit-form-nat", (req, res) => {
   console.log(req.body); // log the data
   res.send("Data Received jo");
