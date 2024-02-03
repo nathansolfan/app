@@ -20,7 +20,15 @@ const path = require("path");
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 
 const readBookingsFromFile = () => {
-  return new Promise((resolve, reject) => {});
+  return new Promise((resolve, reject) => {
+    fs.readFile(BOOKINGS_FILE, (error, data) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(JSON.parse(data.toString() || "[]"));
+    });
+  });
 };
 
 app.post("/submit-form-nat", (req, res) => {
