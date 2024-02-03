@@ -77,6 +77,9 @@ app.post("/login", (req, res) => {
 
 app.post("/book", async (req, res) => {
   try {
+    const newBooking = req.body;
+    const bookings = await readBookingsFromFile();
+    bookings.push(newBooking);
   } catch (error) {}
 });
 
