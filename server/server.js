@@ -34,6 +34,13 @@ const readBookingsFromFile = () => {
 const saveBookingsToFile = (booking) => {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify(bookings, null, 2);
+    fs.writeFile(BOOKINGS_FILE, data, (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve();
+    });
   });
 };
 
