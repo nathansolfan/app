@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function bookingDisplay() {
+export default function BookingDisplay() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,13 @@ export default function bookingDisplay() {
   return (
     <div>
       <h3>All Bookings:</h3>
-      <ul>{bookings.map}</ul>
+      <ul>
+        {bookings.map((booking, index) => {
+          <li key={index}>
+            Date: {booking.date}, Time: {booking.time}
+          </li>;
+        })}
+      </ul>
     </div>
   );
 }
