@@ -7,7 +7,9 @@ export default function BookingDisplay() {
     setBookings(updatedBookings);
 
     // tell server to delete
-    fetch("http://localhost:3001/bookings/${id}", { method: "DELETE" });
+    fetch(`http://localhost:3001/bookings/${id}`, { method: "DELETE" })
+      .then(() => console.log("Booking Deleted"))
+      .catch((error) => console.log("Error deleting booking:", error));
   };
 
   useEffect(() => {
