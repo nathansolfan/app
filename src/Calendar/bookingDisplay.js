@@ -15,9 +15,11 @@ export default function BookingDisplay() {
       <h3>All Bookings:</h3>
       <ul>
         {bookings.map((booking, index) => {
-          <li key={index}>
-            Date: {booking.date}, Time: {booking.time}
-          </li>;
+          return (
+            <li key={index}>
+              Date: {booking.date}, Time: {booking.time}
+            </li>
+          );
         })}
       </ul>
     </div>
