@@ -80,7 +80,12 @@ app.post("/login", (req, res) => {
 
 // GET ENDPOINT
 
-app.get("", () => {});
+app.get("/bookings", async (req, res) => {
+  try {
+    const bookings = await readBookingsFromFile();
+    res.json(bookings);
+  } catch (error) {}
+});
 
 app.post("/book", async (req, res) => {
   try {
