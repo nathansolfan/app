@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function BookingDisplay() {
   const [bookings, setBookings] = useState([]);
+  const handleDelete = () => {};
 
   useEffect(() => {
     fetch("http://localhost:3001/bookings")
@@ -18,6 +19,13 @@ export default function BookingDisplay() {
           return (
             <li key={index}>
               Date: {booking.date}, Time: {booking.time}
+              <button
+                onClick={() => {
+                  handleDelete(booking.id);
+                }}
+              >
+                Delete me
+              </button>
             </li>
           );
         })}
