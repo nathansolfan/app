@@ -78,6 +78,10 @@ app.post("/login", (req, res) => {
   }
 });
 
+// GET ENDPOINT
+
+app.get("", () => {});
+
 app.post("/book", async (req, res) => {
   try {
     const newBooking = req.body;
@@ -96,16 +100,6 @@ app.post("/book", async (req, res) => {
     res.status(500).send("Failed to process booking");
   }
 });
-
-// // BOOKING backend
-// let bookings = [];
-// app.post("/book", (req, res) => {
-//   const booking = req.body;
-//   // stored in an array - booking
-//   bookings.push(booking);
-//   console.log("new Booking received", booking);
-//   res.json({ status: "success", message: "Booking confirmed", booking });
-// });
 
 // SERVER LISTENING
 app.listen(port, () => {

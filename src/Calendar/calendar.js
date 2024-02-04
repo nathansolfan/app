@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import Confirmation from "./confirmation";
+import BookingDisplay from "./bookingDisplay";
 
 const generateTime = (date) => {
   const formattedDate = date.toISOString().split("T")[0];
@@ -17,7 +18,6 @@ export default function MyCalendar() {
   const [selectDate, setSelectDate] = useState(new Date());
   // keep track of time slot
   const [selectedTime, setSelectedTime] = useState(null);
-
   // state for confirmation - starts false
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -97,6 +97,7 @@ export default function MyCalendar() {
           )}
         </ul>
       </div>
+      <BookingDisplay />
       <div>
         <Confirmation
           isVisible={showConfirmation}
