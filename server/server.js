@@ -86,9 +86,11 @@ app.get("/bookings", async (req, res) => {
   } catch (error) {}
 });
 
-// DELETE ENDPOINT
-
-app.delete(`/bookings/:id`, async (req, res) => {
+// DELETE ENDPOINT - with function generateId()
+const generateId = () => {
+  return Date.now().toString();
+};
+app.delete("/bookings/:id", async (req, res) => {
   const { id } = req.params;
   const bookings = await readBookingsFromFile();
   const updatedBookings = bookings.filter((booking) => booking.id !== id);
@@ -98,7 +100,9 @@ app.delete(`/bookings/:id`, async (req, res) => {
 
 app.post("/book", async (req, res) => {
   try {
-    const newBooking = req.body;
+    const bookingDetails = req.body;
+    const id = generateId();
+    const newBooking = { id, bookingDetails };
     console.log("Received booking dataaa:", newBooking);
     const bookings = await readBookingsFromFile();
     bookings.push(newBooking);
