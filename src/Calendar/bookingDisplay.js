@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 
 export default function BookingDisplay() {
   const [bookings, setBookings] = useState([]);
-  const handleDelete = () => {};
+  const handleDelete = (id) => {
+    const updatedBookings = bookings.filter((booking) => booking.id !== id);
+    setBookings(updatedBookings);
+  };
 
   useEffect(() => {
     fetch("http://localhost:3001/bookings")
