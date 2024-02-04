@@ -5,6 +5,9 @@ export default function BookingDisplay() {
   const handleDelete = (id) => {
     const updatedBookings = bookings.filter((booking) => booking.id !== id);
     setBookings(updatedBookings);
+
+    // tell server to delete
+    fetch("http://localhost:3001/bookings/${id}", { method: "DELETE" });
   };
 
   useEffect(() => {
