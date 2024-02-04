@@ -79,12 +79,21 @@ app.post("/login", (req, res) => {
 });
 
 // GET ENDPOINT
-
 app.get("/bookings", async (req, res) => {
   try {
     const bookings = await readBookingsFromFile();
     res.json(bookings);
   } catch (error) {}
+});
+
+// DELETE ENDPOINT
+
+app.delete(`/bookings/:id`, async (req, res) => {
+  const { id } = req.params;
+  const bookings = await readBookingsFromFile();
+  const updatedBookings = bookings.filter((booking) => booking.id !== id);
+  await saveBookingsToFile(updatedBookings);
+  res.send({ message: "Booking deleted" });
 });
 
 app.post("/book", async (req, res) => {
