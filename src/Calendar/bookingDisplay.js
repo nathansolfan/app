@@ -10,5 +10,10 @@ export default function bookingDisplay() {
       .catch((error) => console.error("Failed to fetch em bookings:", error));
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <h3>All Bookings:</h3>
+      <ul>{bookings.map}</ul>
+    </div>
+  );
 }
