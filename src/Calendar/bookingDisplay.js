@@ -25,9 +25,8 @@ export default function BookingDisplay() {
       <ul>
         {bookings.map((booking, index) => {
           return (
-            <li key={index}>
-              Date: {booking.bookingDetails.date}, Time:{" "}
-              {booking.bookingDetails.time}
+            <li key={booking.id}>
+              Date: {booking.date}, Time: {booking.time}
               <button
                 onClick={() => {
                   handleDelete(booking.id);

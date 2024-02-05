@@ -102,7 +102,7 @@ app.post("/book", async (req, res) => {
   try {
     const bookingDetails = req.body;
     const id = generateId();
-    const newBooking = { id, bookingDetails };
+    const newBooking = { id, ...bookingDetails };
     console.log("Received booking dataaa:", newBooking);
     const bookings = await readBookingsFromFile();
     bookings.push(newBooking);
