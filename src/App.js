@@ -8,6 +8,7 @@ import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
 import MyCalendar from "./Calendar/calendar";
+import SportsmonkAPI from "./SportmonkAPI/SportsmonkAPI";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
@@ -40,6 +41,7 @@ function App() {
               />
               <Route path="/register" element={<Register />} />
               <Route path="/calendar" element={<MyCalendar />} />
+              <Route path="/matches" element={<SportsmonkAPI />} />
             </Routes>
           </div>
         </div>
