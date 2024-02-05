@@ -193,9 +193,13 @@ p {
 .delete-btn {
   margin-left: 10px;
   padding: 5px 10px;
-  background-color: #ff6b6b;
+  background-color: #282424;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #ff5252;
 }
