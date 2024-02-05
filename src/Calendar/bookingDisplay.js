@@ -28,6 +28,7 @@ export default function BookingDisplay() {
             <li key={booking.id}>
               Date: {booking.date}, Time: {booking.time}
               <button
+                className="delete-btn"
                 onClick={() => {
                   handleDelete(booking.id);
                 }}
