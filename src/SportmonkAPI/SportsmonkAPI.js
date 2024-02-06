@@ -7,12 +7,7 @@ export default function SportsmonkAPI() {
 
   useEffect(() => {
     axios
-      .get("https://api.sportmonks.com/api/v3/football/livescores", {
-        headers: {
-          Authorization:
-            "E8FlTnzjvNFr1tmGViQWpCXxoQ1CsSXDc842GrRvQBTSdnn0pEugCvi7CmZ6",
-        },
-      })
+      .get("http://localhost:3001/api/matches")
       .then((response) => {
         setMatches(response.data.data);
         console.log(response.data);
@@ -20,10 +15,11 @@ export default function SportsmonkAPI() {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, []);
 
   return (
     <div>
+      <h1>Hello</h1>
       {matches.map((match) => (
         <div key={match.id}>{match.name}</div>
       ))}

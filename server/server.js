@@ -7,6 +7,7 @@ const { registerUser, loginUser } = require("../src/users/users");
 // FS and Path
 const fs = require("fs");
 const path = require("path");
+const { default: axios } = require("axios");
 
 // E X P R E S S
 const app = express();
@@ -78,6 +79,20 @@ app.post("/login", (req, res) => {
   }
 });
 
+// GET MATCHS END POINT
+
+app.get("/api/matches", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://api.sportmonks.com/v3/football/leagues?api_token=E8FlTnzjvNFr1tmGViQWpCXxoQ1CsSXDc842GrRvQBTSdnn0pEugCvi7CmZ6`
+    );
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).send(error.message);
+    console.error(error);
+  }
+});
+
 // GET ENDPOINT
 app.get("/bookings", async (req, res) => {
   try {
@@ -114,7 +129,7 @@ app.post("/book", async (req, res) => {
       booking: newBooking,
     });
   } catch (error) {
-    console.log("Failed to proceed", error);
+    console.error("Failed to proceed", error);
     res.status(500).send("Failed to process booking");
   }
 });
