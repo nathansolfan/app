@@ -41,7 +41,7 @@ function App() {
               />
               <Route path="/register" element={<Register />} />
               <Route path="/calendar" element={<MyCalendar />} />
-              <Route path="/matches" element={<SportsmonkAPI />} />
+              <Route path="/api/matches" element={<SportsmonkAPI />} />
             </Routes>
           </div>
         </div>

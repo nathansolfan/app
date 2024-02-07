@@ -84,7 +84,7 @@ app.post("/login", (req, res) => {
 app.get("/api/matches", async (req, res) => {
   try {
     const response = await axios.get(
-      `https://api.sportmonks.com/v3/football/fixtures?api_token=E8FlTnzjvNFr1tmGViQWpCXxoQ1CsSXDc842GrRvQBTSdnn0pEugCvi7CmZ6`
+      `https://api.sportmonks.com/v3/football?api_token=KOGExVafhqzu5iyQvhWVQqUtXHagKdgTJBJcrora3iy4ilkuWaatCVwfatW6`
     );
     res.json(response.data);
   } catch (error) {
