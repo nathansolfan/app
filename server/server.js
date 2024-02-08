@@ -140,6 +140,17 @@ app.post("/api/feedback", (req, res) => {
   if (rating == null || comment == null) {
     return res.status(400).send("Rating and comment are required");
   }
+
+  const newFeedback = {
+    // simple way to generate ID
+    id: feedbackStore.length + 1,
+    rating,
+    comment,
+    timestamp: new Date(),
+  };
+
+  feedbackStore.push(newFeedback);
+  res.status(201).json(newFeedback);
 });
 
 // SERVER LISTENING
