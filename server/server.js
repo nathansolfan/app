@@ -8,6 +8,7 @@ const { registerUser, loginUser } = require("../src/users/users");
 const fs = require("fs");
 const path = require("path");
 const { default: axios } = require("axios");
+const { error } = require("console");
 
 // E X P R E S S
 const app = express();
@@ -18,11 +19,23 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// bookings.json path
-const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 // feedback.json path
 const FEEDBACK_FILE = path.join(__dirname, "feedback.json");
 
+const readFeedbackFromFile = () => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(FEEDBACK_FILE, (error, data) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(JSON.parse(data.toString() || "[]"));
+    });
+  });
+};
+
+// bookings.json path
+const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 console.log("Bookings file path:", BOOKINGS_FILE);
 
 const readBookingsFromFile = () => {
