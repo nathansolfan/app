@@ -64,7 +64,12 @@ app.post("/api/feedback", async (req, res) => {
 
     feedbackList.push(newFeedback); //Add the new feedback
     await saveFeedbackToFile(feedbackList);
-  } catch (error) {}
+
+    res.status(201).json(newFeedback);
+  } catch (error) {
+    console.error("Failed to store feedback", error);
+    res.status(500).json({ error: "Failed to store feedback" });
+  }
 });
 
 // bookings.json path
