@@ -54,6 +54,13 @@ app.post("/api/feedback", async (req, res) => {
   }
 
   try {
+    const feedbackList = await readFeedbackFromFile();
+    const newFeedback = {
+      id: feedbackList.length + 1,
+      rating,
+      comment,
+      timestamp: new Date(),
+    };
   } catch (error) {}
 });
 
