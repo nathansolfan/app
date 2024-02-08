@@ -9,7 +9,12 @@ export default function FeedbackForm() {
       body: JSON.stringify(feedbackData),
     })
       .then((response) => response.json())
-      .then((data) => {})
+      .then((data) => {
+        // display
+        alert("If data ok then display");
+        setRating(0);
+        setComment("");
+      })
       .catch((error) => {
         console.error(error);
       });
