@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 export default function FeedbackForm() {
   const submitFeedback = (rating, comment) => {
-    const feebackData = { rating, comment };
+    const feedbackData = { rating, comment };
     fetch("/api/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(feebackData),
+      body: JSON.stringify(feedbackData),
     })
       .then((response) => response.json())
       .then((data) => {})

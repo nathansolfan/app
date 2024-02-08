@@ -67,7 +67,7 @@ app.post("/register", (req, res) => {
     res.status(400).send(result.message);
   }
 });
-
+// L O G I N
 app.post("/login", (req, res) => {
   const { name, password } = req.body;
   const result = loginUser(name, password);
@@ -80,7 +80,6 @@ app.post("/login", (req, res) => {
 });
 
 // GET MATCHS END POINT
-
 app.get("/api/matches", async (req, res) => {
   try {
     const response = await axios.get(
@@ -131,6 +130,15 @@ app.post("/book", async (req, res) => {
   } catch (error) {
     console.error("Failed to proceed", error);
     res.status(500).send("Failed to process booking");
+  }
+});
+
+// STORE FEEDBACK
+let feedbackStore = [];
+app.post("/api/feedback", (req, res) => {
+  const { rating, comment } = req.body;
+  if (rating == null || comment == null) {
+    return res.status(400).send("Rating and comment are required");
   }
 });
 
