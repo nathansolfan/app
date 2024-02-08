@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
 export default function FeedbackForm() {
-  const submitFeedback = (rating, comment) => {
+  const submitFeedback = () => {
     const feedbackData = { rating, comment };
-    fetch("/api/feedback", {
+    fetch("http://localhost:3001/api/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(feedbackData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network resp not not");
+        }
+        return response.json();
+      })
       .then((data) => {
         // display
         alert("If data ok then display");
@@ -43,7 +48,7 @@ export default function FeedbackForm() {
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
       </div>
-      <button onClick={submitFeedback}>Submit Feedback</button>
+      <button onClick={() => submitFeedback()}>Submit Feedback</button>
     </div>
   );
 }

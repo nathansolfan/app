@@ -129,7 +129,7 @@ app.post("/book", async (req, res) => {
     });
   } catch (error) {
     console.error("Failed to proceed", error);
-    res.status(500).send("Failed to process booking");
+    res.status(500).json({ error: "Failed to process" });
   }
 });
 

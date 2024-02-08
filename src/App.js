@@ -9,6 +9,7 @@ import Login from "./Login";
 import Register from "./Register";
 import MyCalendar from "./Calendar/Calendar";
 import SportsmonkAPI from "./SportmonkAPI/SportsmonkAPI";
+import FeedbackForm from "./Calendar/FeedbackForm";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
@@ -42,6 +43,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/calendar" element={<MyCalendar />} />
               <Route path="/api/matches" element={<SportsmonkAPI />} />
+              <Route path="/feedback" element={<FeedbackForm />}></Route>
             </Routes>
           </div>
         </div>

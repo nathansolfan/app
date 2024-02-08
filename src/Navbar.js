@@ -37,6 +37,9 @@ export default function Navbar({ isLoggedIn, user, handleLogout }) {
             <li>
               <Link to="/api/matches">Matches</Link>
             </li>
+            <li>
+              <Link to="/feedback">Feedback</Link>
+            </li>
           </>
         )}
       </ul>
