@@ -18,7 +18,14 @@ export default function FeedbackForm() {
           <option value="0">Excellent</option>
         </select>
       </div>
-      FeedbackForm
+      <div>
+        <label>Comment:</label>
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        ></textarea>
+      </div>
+      <button onSubmit={submitFeedback}>Submit Feedback</button>
     </div>
   );
 }
