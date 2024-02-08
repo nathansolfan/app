@@ -18,7 +18,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// bookings.json path
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
+// feedback.json path
+const FEEDBACK_FILE = path.join(__dirname, "feedback.json");
 
 console.log("Bookings file path:", BOOKINGS_FILE);
 
