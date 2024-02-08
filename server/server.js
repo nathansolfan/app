@@ -47,6 +47,16 @@ const saveFeedbackToFile = (feedback) => {
   });
 };
 
+app.post("/api/feedback", async (req, res) => {
+  const { rating, comment } = req.body;
+  if (rating == null || comment == null) {
+    return res.status(400).json({ error: "Rating and Comment are mssing" });
+  }
+
+  try {
+  } catch (error) {}
+});
+
 // bookings.json path
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 console.log("Bookings file path:", BOOKINGS_FILE);
