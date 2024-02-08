@@ -34,6 +34,19 @@ const readFeedbackFromFile = () => {
   });
 };
 
+const saveFeedbackToFile = (feedback) => {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(feedback, null, 2);
+    fs.writeFile(FEEDBACK_FILE, data, (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve();
+    });
+  });
+};
+
 // bookings.json path
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 console.log("Bookings file path:", BOOKINGS_FILE);
