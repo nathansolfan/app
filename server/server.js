@@ -61,6 +61,9 @@ app.post("/api/feedback", async (req, res) => {
       comment,
       timestamp: new Date(),
     };
+
+    feedbackList.push(newFeedback); //Add the new feedback
+    await saveFeedbackToFile(feedbackList);
   } catch (error) {}
 });
 
