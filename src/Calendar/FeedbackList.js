@@ -1,4 +1,3 @@
-import { response } from "express";
 import React, { useEffect, useState } from "react";
 
 export default function FeedbackList() {
@@ -9,7 +8,18 @@ export default function FeedbackList() {
       .then((response) => response.json())
       .then((data) => setFeebackList(data))
       .catch((error) => console.error("Error fetching DA feedback", error));
-  });
+  }, []);
 
-  return <div>FeedbackList</div>;
+  return (
+    <div>
+      <h2>Feedback List</h2>
+      <ul>
+        {feedbackList.map((feedback) => (
+          <li key={feedback.id}>
+            {feedback.date} - {feedback.rating} - {feedback.comment}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

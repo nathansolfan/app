@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FeedbackList from "./FeedbackList";
 
 export default function FeedbackForm() {
   const submitFeedback = () => {
@@ -49,6 +50,7 @@ export default function FeedbackForm() {
         ></textarea>
       </div>
       <button onClick={() => submitFeedback()}>Submit Feedback</button>
+      <FeedbackList />
     </div>
   );
 }
