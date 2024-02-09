@@ -10,6 +10,15 @@ export default function FeedbackList() {
       .catch((error) => console.error("Error fetching DA feedback", error));
   }, []);
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3001/api/feed/${id}`, { method: "DELETE" }).then(
+      () =>
+        setFeebackList(
+          feedbackList.filter((item) => item.id.toString() !== id)
+        ).catch((error) => console.error("Error deleting feedback:", error))
+    );
+  };
+
   return (
     <div>
       <h2>Feedback List</h2>
