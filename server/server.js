@@ -72,6 +72,8 @@ app.post("/api/feedback", async (req, res) => {
   }
 });
 
+app.get("/api/feedback", async (req, res) => {});
+
 // bookings.json path
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 console.log("Bookings file path:", BOOKINGS_FILE);
