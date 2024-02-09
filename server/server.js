@@ -72,7 +72,15 @@ app.post("/api/feedback", async (req, res) => {
   }
 });
 
-app.get("/api/feedback", async (req, res) => {});
+app.get("/api/feedback", async (req, res) => {
+  try {
+    const feedbackList = await readFeedbackFromFile();
+    res.json(feedbackList);
+  } catch (error) {
+    console.error("Failed to read fileee", error);
+    res.status(500).json({ error: "Failed to retrieveee" });
+  }
+});
 
 // bookings.json path
 const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
