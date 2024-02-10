@@ -82,10 +82,10 @@ app.get("/api/feedback", async (req, res) => {
   }
 });
 // DELETE FEEDBACK
-app.delete("/apo/feedback/:id", async (req, res) => {
+app.delete("/api/feedback/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const feedbackList = await readFeedbackFromFile;
+    const feedbackList = await readFeedbackFromFile();
     const updatedFeedbackList = feedbackList.filter(
       (feedback) => feedback.id.toString() !== id
     );
