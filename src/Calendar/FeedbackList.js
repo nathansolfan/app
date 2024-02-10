@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 
 export default function FeedbackList() {
-  const [feedbackList, setFeebackList] = useState([]);
+  const [feedbackList, setFeedbackList] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3001/api/feedback")
       .then((response) => response.json())
-      .then((data) => setFeebackList(data))
+      .then((data) => setFeedbackList(data))
       .catch((error) => console.error("Error fetching DA feedback", error));
-  }, []);
+  }, [refresh]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3001/api/feedback/${id}`, { method: "DELETE" })
+    fetch(`http://localhost:3001/api/feedback/${id}`, {
+      method: "DELETE",
+    })
       .then(() => {
-        const updatedFeedbackList = feedbackList.filter(
-          (item) => item.id.toString() !== id
-        );
-        setFeebackList(updatedFeedbackList);
+        setRefresh((prev) => !prev);
       })
-      .catch((error) => console.error("Error deleting feedback:", error));
+      .catch((error) => console.error("Error deleting", error));
   };
 
   return (

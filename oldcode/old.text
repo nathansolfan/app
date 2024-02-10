@@ -20,3 +20,12 @@
         </div>
       ))}
     </div>
+
+
+     .then(() => {
+        const updatedFeedbackList = feedbackList.filter(
+          (item) => item.id.toString() !== id
+        );
+        setFeedbackList(updatedFeedbackList);
+      })
+      .catch((error) => console.error("Error deleting feedback:", error));
