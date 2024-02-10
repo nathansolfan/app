@@ -4,5 +4,11 @@
     "rating": "3",
     "comment": "jiijijijijijij",
     "timestamp": "2024-02-09T15:43:24.862Z"
+  },
+  {
+    "id": 2,
+    "rating": 0,
+    "comment": "sdadasd",
+    "timestamp": "2024-02-09T20:05:31.317Z"
   }
 ]

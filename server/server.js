@@ -46,7 +46,7 @@ const saveFeedbackToFile = (feedback) => {
     });
   });
 };
-
+// POST FEEDBACK
 app.post("/api/feedback", async (req, res) => {
   const { rating, comment } = req.body;
   if (rating == null || comment == null) {
@@ -71,7 +71,7 @@ app.post("/api/feedback", async (req, res) => {
     res.status(500).json({ error: "Failed to store feedback" });
   }
 });
-
+// GET FEEDBACK
 app.get("/api/feedback", async (req, res) => {
   try {
     const feedbackList = await readFeedbackFromFile();
@@ -80,6 +80,12 @@ app.get("/api/feedback", async (req, res) => {
     console.error("Failed to read fileee", error);
     res.status(500).json({ error: "Failed to retrieveee" });
   }
+});
+// DELETE FEEDBACK
+app.delete("/apo/feedback/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+  } catch (error) {}
 });
 
 // bookings.json path

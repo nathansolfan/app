@@ -11,12 +11,14 @@ export default function FeedbackList() {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3001/api/feed/${id}`, { method: "DELETE" }).then(
-      () =>
-        setFeebackList(
-          feedbackList.filter((item) => item.id.toString() !== id)
-        ).catch((error) => console.error("Error deleting feedback:", error))
-    );
+    fetch(`http://localhost:3001/api/feedback/${id}`, { method: "DELETE" })
+      .then(() => {
+        const updatedFeedbackList = feedbackList.filter(
+          (item) => item.id.toString() !== id
+        );
+        setFeebackList(updatedFeedbackList);
+      })
+      .catch((error) => console.error("Error deleting feedback:", error));
   };
 
   return (
@@ -26,6 +28,7 @@ export default function FeedbackList() {
         {feedbackList.map((feedback) => (
           <li key={feedback.id}>
             {feedback.date} - {feedback.rating} - {feedback.comment}
+            <button onClick={() => handleDelete(feedback.id)}>Delete</button>
           </li>
         ))}
       </ul>
