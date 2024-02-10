@@ -85,7 +85,16 @@ app.get("/api/feedback", async (req, res) => {
 app.delete("/apo/feedback/:id", async (req, res) => {
   const { id } = req.params;
   try {
-  } catch (error) {}
+    const feedbackList = await readFeedbackFromFile;
+    const updatedFeedbackList = feedbackList.filter(
+      (feedback) => feedback.id.toString() !== id
+    );
+    await saveFeedbackToFile(updatedFeedbackList);
+    res.json({ message: "Feedback delete ok" });
+  } catch (error) {
+    console.error("Failed to deleted fbk", error);
+    res.status(500).json({ error: "Failed to deleted" });
+  }
 });
 
 // bookings.json path
