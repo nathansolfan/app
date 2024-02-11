@@ -7,7 +7,7 @@ import About from "./About"; // Import your About component
 import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
-import MyCalendar from "./Calendar/Calendar";
+import MyCalendar from "./Calendar/calendar";
 import SportsmonkAPI from "./SportmonkAPI/SportsmonkAPI";
 import FeedbackForm from "./Calendar/FeedbackForm";
 
