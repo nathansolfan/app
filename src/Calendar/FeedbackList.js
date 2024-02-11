@@ -26,8 +26,12 @@ export default function FeedbackList() {
       <h2 className="text-center mt-2">Feedback List</h2>
       <ul className="mt-2">
         {feedbackList.map((feedback) => (
-          <li key={feedback.id}>
-            {feedback.date} - {feedback.rating} - {feedback.comment}
+          <li key={feedback.id} className="feedback-item">
+            <div className="feedback-content">
+              <div className="feedback-date">{feedback.date}</div>
+              <div className="feedback-rating">{feedback.rating}</div>
+              <div className="feedback-comment">{feedback.comment}</div>
+            </div>
             <button onClick={() => handleDelete(feedback.id)}>Delete</button>
           </li>
         ))}
