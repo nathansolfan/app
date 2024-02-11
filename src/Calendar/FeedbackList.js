@@ -23,8 +23,8 @@ export default function FeedbackList() {
 
   return (
     <div>
-      <h2>Feedback List</h2>
-      <ul>
+      <h2 className="text-center mt-2">Feedback List</h2>
+      <ul className="mt-2">
         {feedbackList.map((feedback) => (
           <li key={feedback.id}>
             {feedback.date} - {feedback.rating} - {feedback.comment}
