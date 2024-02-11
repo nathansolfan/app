@@ -192,14 +192,43 @@ p {
 
 .delete-btn {
   margin-left: 10px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   background-color: #282424;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .delete-btn:hover {
   background-color: #ff5252;
+}
+
+/* LIST COMPONENT */
+.feedback-item {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rbga(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.feedback-item:hover {
+  box-shadow: 0 5px 8px rgba(0,0,0,0.5);
+
+}
+
+.feedback-content {
+  margin-bottom: 10px;
+}
+
+.feedback-rating {
+  font-weight: bold;
+}
+
+.feedback-comment {
+  color: #333;
 }
