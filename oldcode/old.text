@@ -8,3 +8,24 @@
 //   console.log("new Booking received", booking);
 //   res.json({ status: "success", message: "Booking confirmed", booking });
 // });
+
+
+<div>
+      <h1>Hello</h1>
+      {matches.map((league) => (
+        <div key={league.id}>
+          <h2>{league.name}</h2>
+          <img src={league.image_path} alt={league.name} />
+          <p>Last Played At: {league.last_played_at}</p>
+        </div>
+      ))}
+    </div>
+
+
+     .then(() => {
+        const updatedFeedbackList = feedbackList.filter(
+          (item) => item.id.toString() !== id
+        );
+        setFeedbackList(updatedFeedbackList);
+      })
+      .catch((error) => console.error("Error deleting feedback:", error));

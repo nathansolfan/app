@@ -7,6 +7,8 @@ const { registerUser, loginUser } = require("../src/users/users");
 // FS and Path
 const fs = require("fs");
 const path = require("path");
+const { default: axios } = require("axios");
+const { error } = require("console");
 
 // E X P R E S S
 const app = express();
@@ -17,8 +19,86 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
+// feedback.json path
+const FEEDBACK_FILE = path.join(__dirname, "feedback.json");
 
+const readFeedbackFromFile = () => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(FEEDBACK_FILE, (error, data) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(JSON.parse(data.toString() || "[]"));
+    });
+  });
+};
+
+const saveFeedbackToFile = (feedback) => {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(feedback, null, 2);
+    fs.writeFile(FEEDBACK_FILE, data, (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve();
+    });
+  });
+};
+// POST FEEDBACK
+app.post("/api/feedback", async (req, res) => {
+  const { rating, comment } = req.body;
+  if (rating == null || comment == null) {
+    return res.status(400).json({ error: "Rating and Comment are mssing" });
+  }
+
+  try {
+    const feedbackList = await readFeedbackFromFile();
+    const newFeedback = {
+      id: feedbackList.length + 1,
+      rating,
+      comment,
+      timestamp: new Date(),
+    };
+
+    feedbackList.push(newFeedback); //Add the new feedback
+    await saveFeedbackToFile(feedbackList);
+
+    res.status(201).json(newFeedback);
+  } catch (error) {
+    console.error("Failed to store feedback", error);
+    res.status(500).json({ error: "Failed to store feedback" });
+  }
+});
+// GET FEEDBACK
+app.get("/api/feedback", async (req, res) => {
+  try {
+    const feedbackList = await readFeedbackFromFile();
+    res.json(feedbackList);
+  } catch (error) {
+    console.error("Failed to read fileee", error);
+    res.status(500).json({ error: "Failed to retrieveee" });
+  }
+});
+// DELETE FEEDBACK
+app.delete("/api/feedback/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const feedbackList = await readFeedbackFromFile();
+    const updatedFeedbackList = feedbackList.filter(
+      (feedback) => feedback.id.toString() !== id
+    );
+    await saveFeedbackToFile(updatedFeedbackList);
+    res.json({ message: "Feedback delete ok" });
+  } catch (error) {
+    console.error("Failed to deleted fbk", error);
+    res.status(500).json({ error: "Failed to deleted" });
+  }
+});
+
+// bookings.json path
+const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
 console.log("Bookings file path:", BOOKINGS_FILE);
 
 const readBookingsFromFile = () => {
@@ -66,7 +146,7 @@ app.post("/register", (req, res) => {
     res.status(400).send(result.message);
   }
 });
-
+// L O G I N
 app.post("/login", (req, res) => {
   const { name, password } = req.body;
   const result = loginUser(name, password);
@@ -75,6 +155,19 @@ app.post("/login", (req, res) => {
     res.json({ user: { name: name } });
   } else {
     res.status(401).send(result.message);
+  }
+});
+
+// GET MATCHS END POINT
+app.get("/api/matches", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://api.sportmonks.com/v3/football?api_token=KOGExVafhqzu5iyQvhWVQqUtXHagKdgTJBJcrora3iy4ilkuWaatCVwfatW6`
+    );
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).send(error.message);
+    console.error(error);
   }
 });
 
@@ -102,7 +195,7 @@ app.post("/book", async (req, res) => {
   try {
     const bookingDetails = req.body;
     const id = generateId();
-    const newBooking = { id, bookingDetails };
+    const newBooking = { id, ...bookingDetails };
     console.log("Received booking dataaa:", newBooking);
     const bookings = await readBookingsFromFile();
     bookings.push(newBooking);
@@ -114,9 +207,29 @@ app.post("/book", async (req, res) => {
       booking: newBooking,
     });
   } catch (error) {
-    console.log("Failed to proceed", error);
-    res.status(500).send("Failed to process booking");
+    console.error("Failed to proceed", error);
+    res.status(500).json({ error: "Failed to process" });
   }
+});
+
+// STORE FEEDBACK
+let feedbackStore = [];
+app.post("/api/feedback", (req, res) => {
+  const { rating, comment } = req.body;
+  if (rating == null || comment == null) {
+    return res.status(400).send("Rating and comment are required");
+  }
+
+  const newFeedback = {
+    // simple way to generate ID
+    id: feedbackStore.length + 1,
+    rating,
+    comment,
+    timestamp: new Date(),
+  };
+
+  feedbackStore.push(newFeedback);
+  res.status(201).json(newFeedback);
 });
 
 // SERVER LISTENING
