@@ -2,7 +2,20 @@ import React, { useState } from "react";
 
 export default function ChatGPT() {
   const [userQuery, setUserQuery] = useState("");
-  const [resposes, setResponses] = useState([]);
+  const [responses, setResponses] = useState([]);
+
+  const handleQueryChange = (event) => {
+    setUserQuery(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!userQuery.trim()) return;
+
+    const newResponse = `Response to :${userQuery}`;
+    setResponses([...responses, newResponse]);
+    setUserQuery("");
+  };
 
   return (
     <div>
@@ -11,12 +24,16 @@ export default function ChatGPT() {
         <input
           type="text"
           value={userQuery}
-          onChange={handeQueryChange}
+          onChange={handleQueryChange}
           placeholder="Ask me something bruh"
         />
         <button type="submit">Send</button>
       </form>
-      <div>{setResponses.map(response)}</div>
+      <div>
+        {responses.map((response, index) => (
+          <p key={index}>{response}</p>
+        ))}
+      </div>
     </div>
   );
 }
