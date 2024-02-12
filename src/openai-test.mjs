@@ -1,12 +1,12 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: "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",
 });
 
 async function main() {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "You are a helpful assistant." }],
+    messages: [{ role: "system", content: "Where is italy?" }],
     model: "gpt-3.5-turbo",
   });
 
