@@ -4,11 +4,11 @@ const cors = require("cors");
 // U S E R S
 const { registerUser, loginUser } = require("../src/users/users");
 
+require("dotenv").config();
 // FS and Path
 const fs = require("fs");
 const path = require("path");
 const { default: axios } = require("axios");
-const { error } = require("console");
 
 // E X P R E S S
 const app = express();
@@ -19,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+console.log(process.env.API_KEY);
 // feedback.json path
 const FEEDBACK_FILE = path.join(__dirname, "feedback.json");
 

@@ -29,11 +29,15 @@ export default function FeedbackForm() {
   const [comment, setComment] = useState("");
 
   return (
-    <div>
-      <h3>Submit Feedback</h3>
-      <div>
-        <label>Rating</label>
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+    <div className="feedback-form-container">
+      <h3 className="text-center">Submit Feedback</h3>
+      <div className="feedback-form-field">
+        <label className="feedback-form-label">Rating</label>
+        <select
+          className="feedback-form-select"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+        >
           <option value="0">Choose a rating</option>
           <option value="1">Poor</option>
           <option value="2">Fair</option>
@@ -42,9 +46,10 @@ export default function FeedbackForm() {
           <option value="0">Excellent</option>
         </select>
       </div>
-      <div>
-        <label>Comment:</label>
+      <div className="feedback-form-field">
+        <label className="feedback-form-label">Comment:</label>
         <textarea
+          className="feedback-form-textarea"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
