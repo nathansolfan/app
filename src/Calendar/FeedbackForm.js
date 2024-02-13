@@ -54,7 +54,9 @@ export default function FeedbackForm() {
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
       </div>
-      <button onClick={() => submitFeedback()}>Submit Feedback</button>
+      <button className="feedback-btn" onClick={() => submitFeedback()}>
+        Submit Feedback
+      </button>
       <FeedbackList />
     </div>
   );
