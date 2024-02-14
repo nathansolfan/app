@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import footballImage from "./image/football.png"; // Importing the image
 
 export default function Navbar({ isLoggedIn, user, handleLogout }) {
   return (
     <nav className="navbar">
+      <div className="navbar-brand">
+        <img src={footballImage} alt="Football" />
+      </div>
       {isLoggedIn && (
         <div className="navbar-user-info">
           <span>Welcome, {user.name}</span>
