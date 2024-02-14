@@ -6,7 +6,7 @@ export default function Navbar({ isLoggedIn, user, handleLogout }) {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img src={footballImage} alt="Football" />
+        {/* <img className="navbar-img" src={footballImage} alt="Football" /> */}
       </div>
       {isLoggedIn && (
         <div className="navbar-user-info">
