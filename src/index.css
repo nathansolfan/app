@@ -2,14 +2,22 @@
 :root {
   /* Existing variables */
   --navbar-height: 60px; /* Adjust based on your design */
+  --font-size-base: 16px; /* Base font size */
+  --font-size-large: 18px; /* Larger font size for navigation links */
+  --navbar-link-spacing: 15px; /* Spacing between navbar links */
+  --navbar-padding: 0 20px; /* Horizontal padding for navbar */
+  --link-hover-effect: underline; /* Hover effect for links */
 }
 
 /* Base Styles */
 body, html {
   height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: var(--font-size-base);
 }
 
 .App {
@@ -29,48 +37,49 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: var(--navbar-padding);
 }
 
 .navbar-brand {
-  /* Styles for your brand/logo */
+  font-size: var(--font-size-large); /* Larger font for brand/logo */
+  font-weight: bold; /* Make the brand/logo text bold */
 }
 
 .navbar-user-info {
-  /* Styles for user info section */
+  font-size: var(--font-size-base); /* Standard font size for user info */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  font-size: var(--font-size-large); /* Larger font for navigation links */
 }
 
 .nav-links li {
-  margin: 0 10px; /* Adjust spacing between links */
+  margin: 0 var(--navbar-link-spacing); /* Adjust spacing between links */
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-inverse);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .nav-links a:hover {
   color: var(--hover-text);
+  text-decoration: var(--link-hover-effect); /* Hover effect for links */
 }
 
 .btn-logout {
-  /* Styles for logout button */
-  margin-left: 20px; /* Adjust spacing */
+  padding: 5px 10px; /* Padding for logout button */
+  background-color: var(--primary-color); /* Use primary color for button */
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Centering Page Content */
-.main-content {
-  flex-grow: 1;
-  width: 100%; /* Adjust width as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.btn-logout:hover {
+  background-color: var(--hover-primary); /* Darken the button on hover */
 }
