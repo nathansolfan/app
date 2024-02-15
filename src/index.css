@@ -2,8 +2,8 @@
 :root {
   /* Existing variables */
   --navbar-height: 60px; /* Adjust based on your design */
-  --font-size-base: 16px; /* Base font size */
-  --font-size-large: 18px; /* Larger font size for navigation links */
+  --font-size-base: 20px; /* Base font size */
+  --font-size-large: 22px; /* Larger font size for navigation links */
   --navbar-link-spacing: 15px; /* Spacing between navbar links */
   --navbar-padding: 0 20px; /* Horizontal padding for navbar */
   --link-hover-effect: underline; /* Hover effect for links */
@@ -38,7 +38,10 @@ body, html {
   justify-content: space-between;
   align-items: center;
   padding: var(--navbar-padding);
+  border: 1px solid #ccc; /* Add a border around the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow for depth */
 }
+
 
 .navbar-brand {
   font-size: var(--font-size-large); /* Larger font for brand/logo */
