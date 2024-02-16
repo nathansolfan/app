@@ -1,24 +1,60 @@
 .about-container {
     text-align: center;
     padding: 20px;
-}
-
-.about-image {
-    max-width: 150px;
-    height: auto;
+    max-width: 800px; /* Limit the width for better readability */
+    margin: auto; /* Center the container */
+    background: #f9f9f9; /* Light background for the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Soften the edges */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  .about-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .about-image {
+    width: 150px; /* Fixed width for consistency */
+    height: 150px; /* Ensure the image is a perfect circle */
     border-radius: 50%;
     margin-bottom: 20px;
-}
-
-.about-header, .skills-header, .experience-header, .contact-header {
-    margin-top: 20px
-}
-
-.skills-list {
+    border: 3px solid #eee; /* Subtle border around the image */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .about-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+  }
+  
+  .about-header, .skills-header, .experience-header, .contact-header {
+    color: #333; /* Darker text for contrast */
+    margin-top: 20px;
+  }
+  
+  .introduction, .experience-section, .contact-info {
+    color: #555; /* Slightly lighter text for the body */
+    margin-bottom: 20px;
+  }
+  
+  .skills-list {
     list-style-type: none;
     padding: 0;
-}
-
-.contact-info {
-    white-space: pre-line;
-}
+    margin-bottom: 20px; /* Add some space below the list */
+  }
+  
+  .skills-list li {
+    margin-bottom: 10px; /* Space between list items */
+  }
+  
+  /* Add a smooth transition to all links */
+  a {
+    color: #007bff; /* A pleasant shade of blue for links */
+    text-decoration: none; /* No underline */
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #0056b3; /* A darker shade of blue on hover */
+  }
+  
