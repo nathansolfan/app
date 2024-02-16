@@ -1,0 +1,24 @@
+.about-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.about-image {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.about-header, .skills-header, .experience-header, .contact-header {
+    margin-top: 20px
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info {
+    white-space: pre-line;
+}
