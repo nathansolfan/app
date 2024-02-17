@@ -3,7 +3,7 @@ import "./Services.css";
 const Services = () => {
   return (
     <div>
-      <section>
+      <section className="blue">
         <h1>Nice Curves</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum
@@ -12,7 +12,7 @@ const Services = () => {
           Perspiciatis?
         </p>
       </section>
-      <section>
+      <section className="red">
         <h1>Nice Curves</h1>
         <p>
           Sequi quisquam rerum, in, quasi veritatis qui quidem reiciendis
@@ -21,7 +21,7 @@ const Services = () => {
           omnis debitis fuga soluta porro excepturi.
         </p>
       </section>
-      <section>
+      <section className="yellow">
         <h1>Nice Curves</h1>
         <p>
           At possimus minus, debitis veniam illum saepe velit amet dolore
@@ -30,7 +30,7 @@ const Services = () => {
           quas soluta velit.
         </p>
       </section>
-      <section>
+      <section className="green">
         <h1>Nice Curves</h1>
         <p>
           Adipisci est amet, iste aliquid, deserunt consequuntur quo unde quae
@@ -39,7 +39,7 @@ const Services = () => {
           culpa. Labore, nobis.
         </p>
       </section>
-      <section>
+      <section className="orange">
         <h1>Nice Curves</h1>
         <p>
           Perspiciatis molestias veniam, maxime quae debitis unde labore
@@ -48,7 +48,7 @@ const Services = () => {
           aliquid quaerat expedita blanditiis vero.
         </p>
       </section>
-      <section>
+      <section className="pink">
         <h1>Nice Curves</h1>
         <p>
           Pariatur vitae unde cupiditate maiores ullam quos neque harum rem
@@ -57,7 +57,7 @@ const Services = () => {
           similique aliquam vel!
         </p>
       </section>
-      <section>
+      <section className="brown">
         <h1>Nice Curves</h1>
         <p>
           At tenetur enim natus reprehenderit hic molestiae corrupti sed iste
@@ -66,7 +66,7 @@ const Services = () => {
           omnis.
         </p>
       </section>
-      <section>
+      <section className="grey">
         <h1>Nice Curves</h1>
         <p>
           Alias magnam dignissimos qui nihil assumenda neque eligendi, modi
