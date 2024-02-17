@@ -3,7 +3,7 @@
     padding: 20px;
     max-width: 800px; /* Limit the width for better readability */
     margin: auto; /* Center the container */
-    background: #f9f9f9; /* Light background for the container */
+    background: #e7dede; /* Light background for the container */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-radius: 10px; /* Soften the edges */
     transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
