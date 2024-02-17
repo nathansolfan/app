@@ -15,21 +15,36 @@ section {
 }
 
 .blue {
-
+    background-color: blue;
 }
 
 .red {
-    
+    background-color: red;
 }
 
-.yellow
+.yellow {
+    background-color: yellow;
+}
 
-.green
+.green {
+    background-color: green;
+}
 
-.orange
+.orange {
+    background-color: orange;
+}
+.pink {
+    background-color: pink;
+}
 
-.pink
+.brown {
+    background-color: brown;
+}
 
-.brown
+.grey {
+    background-color: gray;
+}
 
-.grey
+.curve {
+
+}

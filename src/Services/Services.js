@@ -11,6 +11,8 @@ const Services = () => {
           non quisquam, a labore cupiditate repellat, rerum fugit ab?
           Perspiciatis?
         </p>
+        {/* empty div for the curve */}
+        <div className="curve"></div>
       </section>
       <section className="red">
         <h1>Nice Curves</h1>
