@@ -4,13 +4,13 @@ import "./index.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About/About"; // Import your About component
-import Services from "./Services"; // Import your Services component
 import Login from "./Login";
 import Register from "./Register";
 import MyCalendar from "./Calendar/Calendar";
 import SportsmonkAPI from "./SportmonkAPI/SportsmonkAPI";
 import FeedbackForm from "./Calendar/FeedbackForm";
 import ChatGPT from "./ChatGPT/ChatGPT";
+import Services from "./Services/Services";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });

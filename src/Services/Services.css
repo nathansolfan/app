@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    color: white;
+    background-color: #202731;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
