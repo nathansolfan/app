@@ -11,6 +11,7 @@ import SportsmonkAPI from "./SportmonkAPI/SportsmonkAPI";
 import FeedbackForm from "./Calendar/FeedbackForm";
 import ChatGPT from "./ChatGPT/ChatGPT";
 import Services from "./Services/Services";
+import Line from "./Services/Line";
 
 function App() {
   const [auth, setAuth] = useState({ isLoggedIn: false, user: null });
@@ -37,6 +38,7 @@ function App() {
               {/* Specify the Home component */}
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/line" element={<Line />} />
               <Route
                 path="/login"
                 element={<Login handleLogin={handleLogin} />}

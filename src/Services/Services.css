@@ -1,55 +1,58 @@
-body {
-    margin: 0;
-    color: white;
-    background-color: #202731;
-}
-
-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 400px;
-    /* viewport viewwidth */
-    padding: 100px 20vw;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.green {
-    background-color: green;
-}
-
-.orange {
-    background-color: orange;
-}
-.pink {
-    background-color: pink;
-}
-
-.brown {
-    background-color: brown;
-}
-
-.grey {
-    background-color: gray;
-}
-
-/* hard example */
-.curve {
-    background-color: aqua;
+.service-section .curve {
     position: absolute;
     height: 225px;
     width: 100%;
     bottom: 0;
+}
+
+.service-section .curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #202731;
+}
+
+.service-section .curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #3c31dd;
+}
+
+
+/*  */
+
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+}
+
+.curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #202731;
+    transform: translate(50%, 50%);
+}
+
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #3c31dd;
+    transform: translate(50%, 50%);
+    z-index: -1;
 }

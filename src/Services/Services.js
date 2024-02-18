@@ -2,20 +2,21 @@ import "./Services.css";
 
 const Services = () => {
   return (
-    <div>
-      <section className="blue">
-        <h1>Nice Curves</h1>
+    <div className="services-section">
+      {" "}
+      {/* Wrap content with a unique class */}
+      <section>
+        <h1>Nice Curves1</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum
           nobis adipisci natus, maxime quia dolores minus perspiciatis hic eos
           non quisquam, a labore cupiditate repellat, rerum fugit ab?
           Perspiciatis?
         </p>
-        {/* empty div for the curve */}
-        <div className="curve"></div>
+        <div className="curve"></div> {/* Curve div */}
       </section>
       <section className="red">
-        <h1>Nice Curves</h1>
+        <h1>Nice Curves2</h1>
         <p>
           Sequi quisquam rerum, in, quasi veritatis qui quidem reiciendis
           aliquam sed perspiciatis facere amet sapiente temporibus architecto
@@ -24,7 +25,7 @@ const Services = () => {
         </p>
       </section>
       <section className="yellow">
-        <h1>Nice Curves</h1>
+        <h1>Nice Curves3</h1>
         <p>
           At possimus minus, debitis veniam illum saepe velit amet dolore
           aspernatur corrupti, corporis eius minima maiores veritatis nisi?
