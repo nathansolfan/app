@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import footballImage from "./image/football.png"; // Importing the image
+// import footballImage from "./image/football.png"; // Importing the image
 
 export default function Navbar({ isLoggedIn, user, handleLogout }) {
   return (
