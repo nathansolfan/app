@@ -45,6 +45,11 @@ section {
     background-color: gray;
 }
 
+/* hard example */
 .curve {
-
+    background-color: aqua;
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
 }
