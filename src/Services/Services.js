@@ -1,6 +1,20 @@
+import { useEffect } from "react";
 import "./Services.css";
+import KUTE from "kute.js";
 
 const Services = () => {
+  useEffect(() => {
+    import("kute.js").then((KUTE) => {
+      const tween = KUTE.fromTo(
+        "#blob1",
+        { path: "#blob1" },
+        { path: "#blob2" },
+        { repeat: 999, duration: 3000, yoyo: true }
+      );
+      tween.start();
+    });
+  }, []);
+
   return (
     <div className="services-section">
       {" "}

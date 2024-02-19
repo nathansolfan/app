@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.2",
     "express": "^4.18.2",
+    "kute.js": "^2.2.4",
     "openai": "^4.27.0",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
