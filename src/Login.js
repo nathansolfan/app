@@ -30,6 +30,12 @@ export default function Login({ handleLogin }) {
     <div>
       <h2>Log in</h2>
       <Form onSubmit={FormSubmit} buttonLabel={"Login"} />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt id
+        dolorem, inventore similique ratione dolores doloribus soluta ipsa
+        corporis ipsam aperiam? Labore rem eligendi sint facilis neque
+        repudiandae dolore sunt!
+      </p>
     </div>
   );
 }
