@@ -133,7 +133,7 @@ app.post("/submit-form-nat", (req, res) => {
   res.send("Data Received jo");
 });
 
-// R E G I S T E R
+// R E G I S T E R - registerUsar located at src/users
 app.post("/register", (req, res) => {
   const { name, password } = req.body;
 
